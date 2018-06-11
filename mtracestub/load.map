@@ -1,0 +1,19 @@
+08048000-08049000 r-xp 00000000 08:01 242963     /home/simon/test/mtracestub/test
+08049000-0804a000 rw-p 00000000 08:01 242963     /home/simon/test/mtracestub/test
+0804a000-0806b000 rw-p 0804a000 00:00 0          [heap]
+b7679000-b767a000 ---p b7679000 00:00 0 
+b767a000-b7e7b000 rw-p b767a000 00:00 0 
+b7e7b000-b7e8a000 r-xp 00000000 08:01 113181     /lib/tls/i686/cmov/libpthread-2.3.6.so
+b7e8a000-b7e8b000 rw-p 0000e000 08:01 113181     /lib/tls/i686/cmov/libpthread-2.3.6.so
+b7e8b000-b7e8d000 rw-p b7e8b000 00:00 0 
+b7e8d000-b7fb2000 r-xp 00000000 08:01 113164     /lib/tls/i686/cmov/libc-2.3.6.so
+b7fb2000-b7fb9000 rw-p 00125000 08:01 113164     /lib/tls/i686/cmov/libc-2.3.6.so
+b7fb9000-b7fbd000 rw-p b7fb9000 00:00 0 
+b7fc4000-b7fc7000 rw-p b7fc4000 00:00 0 
+b7fc7000-b7fc9000 r-xp 00000000 08:01 243073     /home/simon/test/mtracestub/libsmtrace.so
+b7fc9000-b7fca000 rw-p 00001000 08:01 243073     /home/simon/test/mtracestub/libsmtrace.so
+b7fca000-b7fcd000 rw-p b7fca000 00:00 0 
+b7fcd000-b7fe2000 r-xp 00000000 08:01 113157     /lib/ld-2.3.6.so
+b7fe2000-b7fe3000 rw-p 00014000 08:01 113157     /lib/ld-2.3.6.so
+bfb4c000-bfb61000 rw-p bffeb000 00:00 0          [stack]
+ffffe000-fffff000 r-xp 00000000 00:00 0          [vdso]

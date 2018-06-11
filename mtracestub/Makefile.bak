@@ -1,0 +1,49 @@
+glibcBaseDir=/mnt/simon/build/glibc-2.5
+
+stubobjfiles= \
+uti-stub.o  \
+$(glibcBaseDir)/malloc/mtrace.o  \
+$(glibcBaseDir)/stdio-common/_itoa.o \
+$(glibcBaseDir)/libio/iofopen.o \
+$(glibcBaseDir)/libio/iofclose.o \
+$(glibcBaseDir)/nptl/libc-lowlevellock.o \
+$(glibcBaseDir)/libio/fileops.o \
+$(glibcBaseDir)/libio/wfileops.o \
+$(glibcBaseDir)/libio/genops.o  \
+$(glibcBaseDir)/iconv/gconv_db.o \
+$(glibcBaseDir)/libio/stdio.o \
+$(glibcBaseDir)/elf/dl-support.o \
+$(glibcBaseDir)/nptl/ptw-close.o \
+$(glibcBaseDir)/nptl/ptw-open.o \
+$(glibcBaseDir)/string/strchrnul.o \
+$(glibcBaseDir)/locale/xlocale.o \
+$(glibcBaseDir)/wcsmbs/wcsmbsload.o \
+$(glibcBaseDir)/libio/iofwide.o \
+$(glibcBaseDir)/csu/unwind-resume.o \
+$(glibcBaseDir)/stdio-common/itoa-udigits.o
+#/mnt/simon/build/glibc-2.5/libc.a \
+#/mnt/simon/build/glibc-2.5/libc_pic.a
+
+glibBldDir=/mnt/simon/build/glibc-2.5/malloc
+
+stublib=libmtraceinject.so
+
+.PHONY:all
+all:test $(stublib)
+
+test:test.c
+	gcc -ggdb $^ -o $@
+
+%.o:%.c
+	gcc -ggdb -fPIC -c $^ -o $@
+
+$(stublib):uti-stub.o /mnt/simon/build/glibc-2.5/malloc/mtrace.o
+	ld -share -o $@ -lpthread $(stubobjfiles)
+
+/mnt/simon/build/glibc-2.5/malloc/mtrace.o:/mnt/simon/src/glibc-2.5/malloc/mtrace.c
+	echo "make -C /mnt/simon/build/glibc-2.5/malloc mtrace.o"
+
+.PHONY:clean
+clean:
+	rm -rf *.o test *.so.*
+

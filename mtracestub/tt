@@ -1,0 +1,969 @@
+gcc mtrace.c -c -std=gnu99 -O2 -Wall -Winline -Wwrite-strings -fmerge-all-constants -g -Wstrict-prototypes -mpreferred-stack-boundary=2     -I/mnt/simon/src/glibc-2.5/include -I/mnt/simon/build/glibc-2.5/malloc -I/mnt/simon/build/glibc-2.5 /mnt/simon/src/glibc-2.5/sysdeps/i386/elf /mnt/simon/src/glibc-2.5/nptl/sysdeps/unix/sysv/linux/i386/i686 /mnt/simon/src/glibc-2.5/nptl/sysdeps/unix/sysv/linux/i386 /mnt/simon/src/glibc-2.5/sysdeps/unix/sysv/linux/i386 /mnt/simon/src/glibc-2.5/nptl/sysdeps/unix/sysv/linux /mnt/simon/src/glibc-2.5/nptl/sysdeps/pthread /mnt/simon/src/glibc-2.5/sysdeps/pthread /mnt/simon/src/glibc-2.5/sysdeps/unix/sysv/linux /mnt/simon/src/glibc-2.5/sysdeps/gnu /mnt/simon/src/glibc-2.5/sysdeps/unix/common /mnt/simon/src/glibc-2.5/sysdeps/unix/mman /mnt/simon/src/glibc-2.5/sysdeps/unix/inet /mnt/simon/src/glibc-2.5/sysdeps/unix/sysv/i386 /mnt/simon/src/glibc-2.5/nptl/sysdeps/unix/sysv /mnt/simon/src/glibc-2.5/sysdeps/unix/sysv /mnt/simon/src/glibc-2.5/sysdeps/unix/i386 /mnt/simon/src/glibc-2.5/nptl/sysdeps/unix /mnt/simon/src/glibc-2.5/sysdeps/unix /mnt/simon/src/glibc-2.5/sysdeps/posix /mnt/simon/src/glibc-2.5/sysdeps/i386/i686/fpu /mnt/simon/src/glibc-2.5/nptl/sysdeps/i386/i686 /mnt/simon/src/glibc-2.5/sysdeps/i386/i686 /mnt/simon/src/glibc-2.5/sysdeps/i386/i486 /mnt/simon/src/glibc-2.5/nptl/sysdeps/i386/i486 /mnt/simon/src/glibc-2.5/sysdeps/i386/fpu /mnt/simon/src/glibc-2.5/nptl/sysdeps/i386 /mnt/simon/src/glibc-2.5/sysdeps/i386 /mnt/simon/src/glibc-2.5/sysdeps/wordsize-32 /mnt/simon/src/glibc-2.5/sysdeps/ieee754/ldbl-96 /mnt/simon/src/glibc-2.5/sysdeps/ieee754/dbl-64 /mnt/simon/src/glibc-2.5/sysdeps/ieee754/flt-32 /mnt/simon/src/glibc-2.5/sysdeps/ieee754 /mnt/simon/src/glibc-2.5/sysdeps/generic/elf /mnt/simon/src/glibc-2.5/sysdeps/generic /mnt/simon/src/glibc-2.5/nptl  /mnt/simon/src/glibc-2.5 /mnt/simon/src/glibc-2.5/libio -I. -I /lib/modules/2.6.24.6/build/include -D_LIBC_REENTRANT -include /mnt/simon/src/glibc-2.5/include/libc-symbols.h       -o mtrace.o 
+In file included from <command line>:1:
+/mnt/simon/src/glibc-2.5/include/libc-symbols.h:817:26: error: symbol-hacks.h: No such file or directory
+In file included from mtrace.c:24:
+/mnt/simon/src/glibc-2.5/include/malloc.h:2:27: error: malloc/malloc.h: No such file or directory
+In file included from mtrace.c:24:
+/mnt/simon/src/glibc-2.5/include/malloc.h:15: error: syntax error before ‘_int_malloc’
+/mnt/simon/src/glibc-2.5/include/malloc.h:15: error: syntax error before ‘size_t’
+/mnt/simon/src/glibc-2.5/include/malloc.h:15: warning: type defaults to ‘int’ in declaration of ‘_int_malloc’
+/mnt/simon/src/glibc-2.5/include/malloc.h:15: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/malloc.h:15: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/malloc.h:16: error: syntax error before ‘__malloc_ptr_t’
+/mnt/simon/src/glibc-2.5/include/malloc.h:17: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/malloc.h:18: error: syntax error before ‘_int_realloc’
+/mnt/simon/src/glibc-2.5/include/malloc.h:19: error: syntax error before ‘__malloc_ptr_t’
+/mnt/simon/src/glibc-2.5/include/malloc.h:20: warning: type defaults to ‘int’ in declaration of ‘_int_realloc’
+/mnt/simon/src/glibc-2.5/include/malloc.h:20: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/malloc.h:20: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/malloc.h:21: error: syntax error before ‘_int_memalign’
+/mnt/simon/src/glibc-2.5/include/malloc.h:21: error: syntax error before ‘size_t’
+/mnt/simon/src/glibc-2.5/include/malloc.h:23: warning: type defaults to ‘int’ in declaration of ‘_int_memalign’
+/mnt/simon/src/glibc-2.5/include/malloc.h:23: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/malloc.h:23: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/malloc.h:24: error: syntax error before ‘_int_valloc’
+/mnt/simon/src/glibc-2.5/include/malloc.h:24: error: syntax error before ‘size_t’
+/mnt/simon/src/glibc-2.5/include/malloc.h:25: warning: type defaults to ‘int’ in declaration of ‘_int_valloc’
+/mnt/simon/src/glibc-2.5/include/malloc.h:25: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/malloc.h:25: warning: data definition has no type or storage class
+In file included from mtrace.c:25:
+/mnt/simon/src/glibc-2.5/include/mcheck.h:3:27: error: malloc/mcheck.h: No such file or directory
+In file included from /mnt/simon/src/glibc-2.5/include/features.h:323,
+                 from /usr/include/pthread.h:18,
+                 from /mnt/simon/src/glibc-2.5/include/pthread.h:1,
+                 from /usr/include/bits/libc-lock.h:24,
+                 from mtrace.c:26:
+/mnt/simon/src/glibc-2.5/include/sys/cdefs.h:3:28: error: misc/sys/cdefs.h: No such file or directory
+In file included from /usr/include/pthread.h:20,
+                 from /mnt/simon/src/glibc-2.5/include/pthread.h:1,
+                 from /usr/include/bits/libc-lock.h:24,
+                 from mtrace.c:26:
+/mnt/simon/src/glibc-2.5/include/sched.h:2:25: error: posix/sched.h: No such file or directory
+In file included from /usr/include/pthread.h:20,
+                 from /mnt/simon/src/glibc-2.5/include/pthread.h:1,
+                 from /usr/include/bits/libc-lock.h:24,
+                 from mtrace.c:26:
+/mnt/simon/src/glibc-2.5/include/sched.h:5: error: syntax error before ‘__pid’
+/mnt/simon/src/glibc-2.5/include/sched.h:7: error: syntax error before ‘__pid’
+/mnt/simon/src/glibc-2.5/include/sched.h:8: error: syntax error before ‘__pid’
+/mnt/simon/src/glibc-2.5/include/sched.h:11: error: syntax error before ‘__pid’
+/mnt/simon/src/glibc-2.5/include/sched.h:16: error: syntax error before ‘__pid’
+/mnt/simon/src/glibc-2.5/include/sched.h:22: error: syntax error before ‘size_t’
+In file included from /usr/include/pthread.h:21,
+                 from /mnt/simon/src/glibc-2.5/include/pthread.h:1,
+                 from /usr/include/bits/libc-lock.h:24,
+                 from mtrace.c:26:
+/mnt/simon/src/glibc-2.5/include/time.h:5:24: error: time/time.h: No such file or directory
+In file included from /mnt/simon/src/glibc-2.5/include/time.h:6,
+                 from /usr/include/pthread.h:21,
+                 from /mnt/simon/src/glibc-2.5/include/pthread.h:1,
+                 from /usr/include/bits/libc-lock.h:24,
+                 from mtrace.c:26:
+/mnt/simon/src/glibc-2.5/include/xlocale.h:1:28: error: locale/xlocale.h: No such file or directory
+In file included from /usr/include/pthread.h:21,
+                 from /mnt/simon/src/glibc-2.5/include/pthread.h:1,
+                 from /usr/include/bits/libc-lock.h:24,
+                 from mtrace.c:26:
+/mnt/simon/src/glibc-2.5/include/time.h:10: error: syntax error before ‘extern’
+/mnt/simon/src/glibc-2.5/include/time.h:10: error: ‘strftime_l’ undeclared here (not in a function)
+/mnt/simon/src/glibc-2.5/include/time.h:12: error: ‘strptime_l’ undeclared here (not in a function)
+/mnt/simon/src/glibc-2.5/include/time.h:37: error: syntax error before ‘__tzname_cur_max’
+/mnt/simon/src/glibc-2.5/include/time.h:42: error: syntax error before ‘size_t’
+/mnt/simon/src/glibc-2.5/include/time.h:44: error: syntax error before ‘timer’
+/mnt/simon/src/glibc-2.5/include/time.h:53: error: syntax error before ‘__mktime_internal’
+/mnt/simon/src/glibc-2.5/include/time.h:54: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/time.h:57: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/time.h:60: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/time.h:68: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/time.h:76: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/time.h:104: error: syntax error before ‘__locale_t’
+/mnt/simon/src/glibc-2.5/include/time.h:108: error: syntax error before ‘time1’
+In file included from /usr/include/pthread.h:24,
+                 from /mnt/simon/src/glibc-2.5/include/pthread.h:1,
+                 from /usr/include/bits/libc-lock.h:24,
+                 from mtrace.c:26:
+/mnt/simon/src/glibc-2.5/include/signal.h:3:28: error: signal/signal.h: No such file or directory
+In file included from /usr/include/bits/pthreadtypes.h:23,
+                 from /usr/include/pthread.h:25,
+                 from /mnt/simon/src/glibc-2.5/include/pthread.h:1,
+                 from /usr/include/bits/libc-lock.h:24,
+                 from mtrace.c:26:
+/usr/include/bits/sched.h:83: error: syntax error before ‘struct’
+In file included from /usr/include/pthread.h:25,
+                 from /mnt/simon/src/glibc-2.5/include/pthread.h:1,
+                 from /usr/include/bits/libc-lock.h:24,
+                 from mtrace.c:26:
+/usr/include/bits/pthreadtypes.h:50: error: syntax error before ‘size_t’
+/usr/include/bits/pthreadtypes.h:53: error: syntax error before ‘__stacksize’
+In file included from /mnt/simon/src/glibc-2.5/include/pthread.h:1,
+                 from /usr/include/bits/libc-lock.h:24,
+                 from mtrace.c:26:
+/usr/include/pthread.h:59: error: syntax error before ‘enum’
+/usr/include/pthread.h:164: error: syntax error before ‘*’ token
+/usr/include/pthread.h:165: error: ‘pthread_create’ declared as function returning a function
+/usr/include/pthread.h:166: error: syntax error before ‘void’
+/usr/include/pthread.h:169: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:172: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:186: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:194: error: syntax error before ‘*’ token
+/usr/include/pthread.h:197: error: syntax error before ‘*’ token
+/usr/include/pthread.h:200: error: syntax error before ‘*’ token
+/usr/include/pthread.h:204: error: syntax error before ‘*’ token
+/usr/include/pthread.h:208: error: syntax error before ‘*’ token
+/usr/include/pthread.h:213: error: syntax error before ‘*’ token
+/usr/include/pthread.h:219: error: syntax error before ‘*’ token
+/usr/include/pthread.h:223: error: syntax error before ‘*’ token
+/usr/include/pthread.h:228: error: syntax error before ‘*’ token
+/usr/include/pthread.h:232: error: syntax error before ‘*’ token
+/usr/include/pthread.h:237: error: syntax error before ‘*’ token
+/usr/include/pthread.h:241: error: syntax error before ‘*’ token
+/usr/include/pthread.h:246: error: syntax error before ‘*’ token
+/usr/include/pthread.h:250: error: syntax error before ‘*’ token
+/usr/include/pthread.h:259: error: syntax error before ‘*’ token
+/usr/include/pthread.h:263: error: syntax error before ‘*’ token
+/usr/include/pthread.h:271: error: syntax error before ‘*’ token
+/usr/include/pthread.h:275: error: syntax error before ‘*’ token
+/usr/include/pthread.h:283: error: syntax error before ‘*’ token
+/usr/include/pthread.h:287: error: syntax error before ‘*’ token
+/usr/include/pthread.h:295: error: syntax error before ‘pthread_attr_t’
+/usr/include/pthread.h:304: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:310: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:314: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:317: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:325: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:334: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:337: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:340: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:343: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:349: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:353: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:360: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:363: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:368: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:372: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:379: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:383: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:393: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:396: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:399: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:402: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:421: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:424: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:429: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:433: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:443: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:446: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:449: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:452: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:458: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:462: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:465: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:471: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:475: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:481: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:484: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:489: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:493: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:497: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:501: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:511: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:514: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:517: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:520: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:523: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:530: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:532: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:534: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:536: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:540: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:543: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:545: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:558: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:561: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:565: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:568: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:616: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:625: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:637: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:647: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:654: error: syntax error before ‘__clockid_t’
+In file included from /usr/include/pthread.h:659,
+                 from /mnt/simon/src/glibc-2.5/include/pthread.h:1,
+                 from /usr/include/bits/libc-lock.h:24,
+                 from mtrace.c:26:
+/usr/include/bits/sigthread.h:32: error: syntax error before ‘*’ token
+/usr/include/bits/sigthread.h:36: error: syntax error before ‘__THROW’
+In file included from /mnt/simon/src/glibc-2.5/include/pthread.h:1,
+                 from /usr/include/bits/libc-lock.h:24,
+                 from mtrace.c:26:
+/usr/include/pthread.h:677: error: syntax error before ‘__THROW’
+/usr/include/pthread.h:682: error: syntax error before ‘__THROW’
+In file included from /usr/include/bits/libc-lock.h:24,
+                 from mtrace.c:26:
+/mnt/simon/src/glibc-2.5/include/pthread.h:4: error: syntax error before ‘extern’
+In file included from mtrace.c:26:
+/usr/include/bits/libc-lock.h:27:36: error: linuxthreads/internals.h: No such file or directory
+/usr/include/bits/libc-lock.h:352:23: error: bp-sym.h: No such file or directory
+In file included from mtrace.c:29:
+/mnt/simon/src/glibc-2.5/include/dlfcn.h:2:25: error: dlfcn/dlfcn.h: No such file or directory
+In file included from /mnt/simon/src/glibc-2.5/include/dlfcn.h:3,
+                 from mtrace.c:29:
+/mnt/simon/src/glibc-2.5/include/link.h:33:22: error: elf/link.h: No such file or directory
+In file included from /mnt/simon/src/glibc-2.5/include/dlfcn.h:3,
+                 from mtrace.c:29:
+/mnt/simon/src/glibc-2.5/include/link.h:38: error: syntax error before ‘Lmid_t’
+/mnt/simon/src/glibc-2.5/include/link.h:39: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/link.h:43:26: error: bits/linkmap.h: No such file or directory
+/mnt/simon/src/glibc-2.5/include/link.h:44:26: error: dl-lookupcfg.h: No such file or directory
+In file included from /mnt/simon/src/glibc-2.5/include/link.h:45,
+                 from /mnt/simon/src/glibc-2.5/include/dlfcn.h:3,
+                 from mtrace.c:29:
+/mnt/simon/src/glibc-2.5/include/tls.h:6:22: error: tls.h: No such file or directory
+In file included from /mnt/simon/src/glibc-2.5/include/dlfcn.h:3,
+                 from mtrace.c:29:
+/mnt/simon/src/glibc-2.5/include/link.h:90: error: syntax error before ‘ElfW’
+/mnt/simon/src/glibc-2.5/include/link.h:90: warning: no semicolon at end of struct or union
+/mnt/simon/src/glibc-2.5/include/link.h:92: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/link.h:92: warning: type defaults to ‘int’ in declaration of ‘l_ld’
+/mnt/simon/src/glibc-2.5/include/link.h:92: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:104: error: syntax error before ‘l_ns’
+/mnt/simon/src/glibc-2.5/include/link.h:104: warning: type defaults to ‘int’ in declaration of ‘l_ns’
+/mnt/simon/src/glibc-2.5/include/link.h:104: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:122: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/link.h:122: error: ‘DT_NUM’ undeclared here (not in a function)
+/mnt/simon/src/glibc-2.5/include/link.h:122: error: ‘DT_THISPROCNUM’ undeclared here (not in a function)
+/mnt/simon/src/glibc-2.5/include/link.h:123: error: ‘DT_VERSIONTAGNUM’ undeclared here (not in a function)
+/mnt/simon/src/glibc-2.5/include/link.h:123: error: ‘DT_EXTRANUM’ undeclared here (not in a function)
+/mnt/simon/src/glibc-2.5/include/link.h:123: error: ‘DT_VALNUM’ undeclared here (not in a function)
+/mnt/simon/src/glibc-2.5/include/link.h:123: error: ‘DT_ADDRNUM’ undeclared here (not in a function)
+/mnt/simon/src/glibc-2.5/include/link.h:123: warning: type defaults to ‘int’ in declaration of ‘l_info’
+/mnt/simon/src/glibc-2.5/include/link.h:123: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:124: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/link.h:124: warning: type defaults to ‘int’ in declaration of ‘l_phdr’
+/mnt/simon/src/glibc-2.5/include/link.h:124: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:125: error: syntax error before ‘l_entry’
+/mnt/simon/src/glibc-2.5/include/link.h:125: warning: type defaults to ‘int’ in declaration of ‘l_entry’
+/mnt/simon/src/glibc-2.5/include/link.h:125: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:126: error: syntax error before ‘l_phnum’
+/mnt/simon/src/glibc-2.5/include/link.h:126: warning: type defaults to ‘int’ in declaration of ‘l_phnum’
+/mnt/simon/src/glibc-2.5/include/link.h:126: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:127: error: syntax error before ‘l_ldnum’
+/mnt/simon/src/glibc-2.5/include/link.h:127: warning: type defaults to ‘int’ in declaration of ‘l_ldnum’
+/mnt/simon/src/glibc-2.5/include/link.h:127: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:143: error: syntax error before ‘l_nbuckets’
+/mnt/simon/src/glibc-2.5/include/link.h:143: warning: type defaults to ‘int’ in declaration of ‘l_nbuckets’
+/mnt/simon/src/glibc-2.5/include/link.h:143: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:144: error: syntax error before ‘l_gnu_bitmask_idxbits’
+/mnt/simon/src/glibc-2.5/include/link.h:144: warning: type defaults to ‘int’ in declaration of ‘l_gnu_bitmask_idxbits’
+/mnt/simon/src/glibc-2.5/include/link.h:144: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:145: error: syntax error before ‘l_gnu_shift’
+/mnt/simon/src/glibc-2.5/include/link.h:145: warning: type defaults to ‘int’ in declaration of ‘l_gnu_shift’
+/mnt/simon/src/glibc-2.5/include/link.h:145: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:146: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/link.h:146: warning: type defaults to ‘int’ in declaration of ‘l_gnu_bitmask’
+/mnt/simon/src/glibc-2.5/include/link.h:146: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:149: warning: type defaults to ‘int’ in declaration of ‘Elf32_Word’
+/mnt/simon/src/glibc-2.5/include/link.h:149: warning: no semicolon at end of struct or union
+/mnt/simon/src/glibc-2.5/include/link.h:149: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/link.h:150: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/link.h:150: warning: type defaults to ‘int’ in declaration of ‘l_chain’
+/mnt/simon/src/glibc-2.5/include/link.h:150: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:151: error: syntax error before ‘}’ token
+/mnt/simon/src/glibc-2.5/include/link.h:154: warning: type defaults to ‘int’ in declaration of ‘Elf32_Word’
+/mnt/simon/src/glibc-2.5/include/link.h:154: warning: no semicolon at end of struct or union
+/mnt/simon/src/glibc-2.5/include/link.h:154: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/link.h:155: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/link.h:155: warning: type defaults to ‘int’ in declaration of ‘l_buckets’
+/mnt/simon/src/glibc-2.5/include/link.h:155: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:156: error: syntax error before ‘}’ token
+/mnt/simon/src/glibc-2.5/include/link.h:164: error: syntax error before ‘:’ token
+/mnt/simon/src/glibc-2.5/include/link.h:165: error: syntax error before ‘:’ token
+/mnt/simon/src/glibc-2.5/include/link.h:166: error: syntax error before ‘:’ token
+/mnt/simon/src/glibc-2.5/include/link.h:167: error: syntax error before ‘:’ token
+/mnt/simon/src/glibc-2.5/include/link.h:168: error: syntax error before ‘:’ token
+/mnt/simon/src/glibc-2.5/include/link.h:169: error: syntax error before ‘:’ token
+/mnt/simon/src/glibc-2.5/include/link.h:171: error: syntax error before ‘:’ token
+/mnt/simon/src/glibc-2.5/include/link.h:173: error: syntax error before ‘:’ token
+/mnt/simon/src/glibc-2.5/include/link.h:175: error: syntax error before ‘:’ token
+/mnt/simon/src/glibc-2.5/include/link.h:178: error: syntax error before ‘:’ token
+/mnt/simon/src/glibc-2.5/include/link.h:179: error: syntax error before ‘:’ token
+/mnt/simon/src/glibc-2.5/include/link.h:180: error: syntax error before ‘:’ token
+/mnt/simon/src/glibc-2.5/include/link.h:182: error: syntax error before ‘:’ token
+/mnt/simon/src/glibc-2.5/include/link.h:195: error: syntax error before ‘DL_FIXUP_VALUE_TYPE’
+/mnt/simon/src/glibc-2.5/include/link.h:195: warning: no semicolon at end of struct or union
+/mnt/simon/src/glibc-2.5/include/link.h:198: error: syntax error before ‘enterexit’
+/mnt/simon/src/glibc-2.5/include/link.h:198: warning: type defaults to ‘int’ in declaration of ‘enterexit’
+/mnt/simon/src/glibc-2.5/include/link.h:198: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:200: error: syntax error before ‘}’ token
+/mnt/simon/src/glibc-2.5/include/link.h:200: warning: type defaults to ‘int’ in declaration of ‘l_reloc_result’
+/mnt/simon/src/glibc-2.5/include/link.h:200: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:203: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/link.h:203: warning: type defaults to ‘int’ in declaration of ‘l_versyms’
+/mnt/simon/src/glibc-2.5/include/link.h:203: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:210: error: syntax error before ‘l_map_start’
+/mnt/simon/src/glibc-2.5/include/link.h:210: warning: type defaults to ‘int’ in declaration of ‘l_map_start’
+/mnt/simon/src/glibc-2.5/include/link.h:210: warning: type defaults to ‘int’ in declaration of ‘l_map_end’
+/mnt/simon/src/glibc-2.5/include/link.h:210: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:212: error: syntax error before ‘l_text_end’
+/mnt/simon/src/glibc-2.5/include/link.h:212: warning: type defaults to ‘int’ in declaration of ‘l_text_end’
+/mnt/simon/src/glibc-2.5/include/link.h:212: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:228: error: syntax error before ‘l_dev’
+/mnt/simon/src/glibc-2.5/include/link.h:228: warning: type defaults to ‘int’ in declaration of ‘l_dev’
+/mnt/simon/src/glibc-2.5/include/link.h:228: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:229: error: syntax error before ‘l_ino’
+/mnt/simon/src/glibc-2.5/include/link.h:229: warning: type defaults to ‘int’ in declaration of ‘l_ino’
+/mnt/simon/src/glibc-2.5/include/link.h:229: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:243: error: syntax error before ‘l_feature_1’
+/mnt/simon/src/glibc-2.5/include/link.h:243: warning: type defaults to ‘int’ in declaration of ‘l_feature_1’
+/mnt/simon/src/glibc-2.5/include/link.h:243: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:244: error: syntax error before ‘l_flags_1’
+/mnt/simon/src/glibc-2.5/include/link.h:244: warning: type defaults to ‘int’ in declaration of ‘l_flags_1’
+/mnt/simon/src/glibc-2.5/include/link.h:244: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:245: error: syntax error before ‘l_flags’
+/mnt/simon/src/glibc-2.5/include/link.h:245: warning: type defaults to ‘int’ in declaration of ‘l_flags’
+/mnt/simon/src/glibc-2.5/include/link.h:245: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:254: warning: type defaults to ‘int’ in declaration of ‘ElfW’
+/mnt/simon/src/glibc-2.5/include/link.h:254: warning: parameter names (without types) in function declaration
+/mnt/simon/src/glibc-2.5/include/link.h:254: warning: type qualifiers ignored on function return type
+/mnt/simon/src/glibc-2.5/include/link.h:254: error: field ‘ElfW’ declared as a function
+/mnt/simon/src/glibc-2.5/include/link.h:254: warning: no semicolon at end of struct or union
+/mnt/simon/src/glibc-2.5/include/link.h:254: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/link.h:257: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/link.h:257: warning: type defaults to ‘int’ in declaration of ‘ret’
+/mnt/simon/src/glibc-2.5/include/link.h:257: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:258: error: syntax error before ‘}’ token
+/mnt/simon/src/glibc-2.5/include/link.h:258: warning: type defaults to ‘int’ in declaration of ‘l_lookup_cache’
+/mnt/simon/src/glibc-2.5/include/link.h:258: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:284: error: syntax error before ‘l_relro_addr’
+/mnt/simon/src/glibc-2.5/include/link.h:284: warning: type defaults to ‘int’ in declaration of ‘l_relro_addr’
+/mnt/simon/src/glibc-2.5/include/link.h:284: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:291: error: syntax error before ‘uintptr_t’
+/mnt/simon/src/glibc-2.5/include/link.h:291: warning: no semicolon at end of struct or union
+/mnt/simon/src/glibc-2.5/include/link.h:293: error: syntax error before ‘}’ token
+/mnt/simon/src/glibc-2.5/include/link.h:293: warning: type defaults to ‘int’ in declaration of ‘l_audit’
+/mnt/simon/src/glibc-2.5/include/link.h:293: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/link.h:294: error: syntax error before ‘}’ token
+In file included from /mnt/simon/src/glibc-2.5/include/dlfcn.h:3,
+                 from mtrace.c:29:
+/mnt/simon/src/glibc-2.5/include/link.h:302:3: error: #error "__ELF_NATIVE_CLASS must be defined"
+/mnt/simon/src/glibc-2.5/include/link.h:306: warning: ‘struct dl_phdr_info’ declared inside parameter list
+In file included from mtrace.c:29:
+/mnt/simon/src/glibc-2.5/include/dlfcn.h:101: error: syntax error before ‘Dl_info’
+/mnt/simon/src/glibc-2.5/include/dlfcn.h:101: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/dlfcn.h:102: error: syntax error before ‘Dl_info’
+/mnt/simon/src/glibc-2.5/include/dlfcn.h:103: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/dlfcn.h:105: error: syntax error before ‘nsid’
+/mnt/simon/src/glibc-2.5/include/dlfcn.h:105: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/dlfcn.h:114: error: syntax error before ‘nsid’
+/mnt/simon/src/glibc-2.5/include/dlfcn.h:115: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/dlfcn.h:125: error: syntax error before ‘Dl_info’
+/mnt/simon/src/glibc-2.5/include/dlfcn.h:126: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/dlfcn.h:127: error: syntax error before ‘Dl_info’
+/mnt/simon/src/glibc-2.5/include/dlfcn.h:129: warning: function declaration isn’t a prototype
+In file included from mtrace.c:30:
+/mnt/simon/src/glibc-2.5/include/fcntl.h:2:22: error: io/fcntl.h: No such file or directory
+In file included from mtrace.c:30:
+/mnt/simon/src/glibc-2.5/include/fcntl.h:10: error: syntax error before ‘mode_t’
+/mnt/simon/src/glibc-2.5/include/fcntl.h:10: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/fcntl.h:21: error: syntax error before ‘__nonnull’
+/mnt/simon/src/glibc-2.5/include/fcntl.h:24: error: syntax error before ‘__nonnull’
+In file included from mtrace.c:31:
+/mnt/simon/src/glibc-2.5/include/stdio.h:5:27: error: libio/stdio.h: No such file or directory
+In file included from mtrace.c:31:
+/mnt/simon/src/glibc-2.5/include/stdio.h:13: error: syntax error before ‘_G_va_list’
+/mnt/simon/src/glibc-2.5/include/stdio.h:14: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdio.h:15: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/stdio.h:18: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdio.h:21: error: syntax error before ‘_G_va_list’
+/mnt/simon/src/glibc-2.5/include/stdio.h:22: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdio.h:23: error: syntax error before ‘__getline’
+/mnt/simon/src/glibc-2.5/include/stdio.h:24: error: syntax error before ‘FILE’
+/mnt/simon/src/glibc-2.5/include/stdio.h:24: warning: type defaults to ‘int’ in declaration of ‘__getline’
+/mnt/simon/src/glibc-2.5/include/stdio.h:24: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdio.h:24: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/stdio.h:27: error: syntax error before ‘_G_va_list’
+/mnt/simon/src/glibc-2.5/include/stdio.h:28: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdio.h:30: error: syntax error before ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/stdio.h:30: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/stdio.h:30: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/stdio.h:32: error: syntax error before ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/stdio.h:32: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/stdio.h:32: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/stdio.h:34: error: syntax error before ‘_G_va_list’
+/mnt/simon/src/glibc-2.5/include/stdio.h:34: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/stdio.h:34: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/stdio.h:36: error: syntax error before ‘_G_va_list’
+/mnt/simon/src/glibc-2.5/include/stdio.h:36: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/stdio.h:36: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/stdio.h:38: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/stdio.h:38: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdio.h:39: error: syntax error before ‘_G_va_list’
+/mnt/simon/src/glibc-2.5/include/stdio.h:39: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdio.h:40: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/stdio.h:40: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdio.h:41: error: syntax error before ‘FILE’
+/mnt/simon/src/glibc-2.5/include/stdio.h:41: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdio.h:42: error: syntax error before ‘FILE’
+/mnt/simon/src/glibc-2.5/include/stdio.h:42: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdio.h:45: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/stdio.h:45: warning: type defaults to ‘int’ in declaration of ‘__new_tmpfile’
+/mnt/simon/src/glibc-2.5/include/stdio.h:45: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/stdio.h:46: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/stdio.h:46: warning: type defaults to ‘int’ in declaration of ‘__old_tmpfile’
+/mnt/simon/src/glibc-2.5/include/stdio.h:46: warning: data definition has no type or storage class
+In file included from mtrace.c:31:
+/mnt/simon/src/glibc-2.5/include/stdio.h:70: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/stdio.h:70: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdio.h:73: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/stdio.h:73: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdio.h:77: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/stdio.h:77: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdio.h:79: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/stdio.h:79: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdio.h:80: error: syntax error before ‘__getwc_unlocked’
+/mnt/simon/src/glibc-2.5/include/stdio.h:80: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/stdio.h:80: warning: type defaults to ‘int’ in declaration of ‘__getwc_unlocked’
+/mnt/simon/src/glibc-2.5/include/stdio.h:80: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdio.h:80: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/stdio.h:82: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/stdio.h:83: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdio.h:95: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/stdio.h:95: warning: type defaults to ‘int’ in declaration of ‘_IO_new_fopen’
+/mnt/simon/src/glibc-2.5/include/stdio.h:95: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/stdio.h:97: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/stdio.h:97: warning: type defaults to ‘int’ in declaration of ‘_IO_new_fdopen’
+/mnt/simon/src/glibc-2.5/include/stdio.h:97: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/stdio.h:99: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/stdio.h:99: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdio.h:101: error: syntax error before ‘_IO_FILE’
+/mnt/simon/src/glibc-2.5/include/stdio.h:101: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdio.h:104: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/stdio.h:104: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdio.h:106: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/stdio.h:106: warning: function declaration isn’t a prototype
+In file included from /mnt/simon/src/glibc-2.5/include/string.h:3,
+                 from mtrace.c:32:
+/mnt/simon/src/glibc-2.5/include/sys/types.h:1:29: error: posix/sys/types.h: No such file or directory
+In file included from mtrace.c:32:
+/mnt/simon/src/glibc-2.5/include/string.h:9: error: syntax error before ‘__attribute_pure__’
+/mnt/simon/src/glibc-2.5/include/string.h:9: warning: type defaults to ‘int’ in declaration of ‘__attribute_pure__’
+/mnt/simon/src/glibc-2.5/include/string.h:9: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/string.h:14: error: syntax error before ‘__attribute_pure__’
+/mnt/simon/src/glibc-2.5/include/string.h:14: warning: type defaults to ‘int’ in declaration of ‘__attribute_pure__’
+/mnt/simon/src/glibc-2.5/include/string.h:14: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/string.h:18: error: syntax error before ‘__attribute_pure__’
+/mnt/simon/src/glibc-2.5/include/string.h:18: warning: type defaults to ‘int’ in declaration of ‘__attribute_pure__’
+/mnt/simon/src/glibc-2.5/include/string.h:18: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/string.h:21: error: syntax error before ‘__attribute_pure__’
+/mnt/simon/src/glibc-2.5/include/string.h:21: warning: type defaults to ‘int’ in declaration of ‘__attribute_pure__’
+/mnt/simon/src/glibc-2.5/include/string.h:21: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/string.h:24: error: syntax error before ‘__attribute_pure__’
+/mnt/simon/src/glibc-2.5/include/string.h:24: warning: type defaults to ‘int’ in declaration of ‘__attribute_pure__’
+/mnt/simon/src/glibc-2.5/include/string.h:24: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/string.h:27: error: syntax error before ‘__attribute_malloc__’
+/mnt/simon/src/glibc-2.5/include/string.h:27: warning: type defaults to ‘int’ in declaration of ‘__attribute_malloc__’
+/mnt/simon/src/glibc-2.5/include/string.h:27: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/string.h:29: error: syntax error before ‘__attribute_malloc__’
+/mnt/simon/src/glibc-2.5/include/string.h:29: warning: type defaults to ‘int’ in declaration of ‘__attribute_malloc__’
+/mnt/simon/src/glibc-2.5/include/string.h:29: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/string.h:32: error: syntax error before ‘__attribute_pure__’
+/mnt/simon/src/glibc-2.5/include/string.h:32: warning: type defaults to ‘int’ in declaration of ‘__attribute_pure__’
+/mnt/simon/src/glibc-2.5/include/string.h:32: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/string.h:35: error: syntax error before ‘__attribute_pure__’
+/mnt/simon/src/glibc-2.5/include/string.h:35: warning: type defaults to ‘int’ in declaration of ‘__attribute_pure__’
+/mnt/simon/src/glibc-2.5/include/string.h:35: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/string.h:38: error: syntax error before ‘__attribute_pure__’
+/mnt/simon/src/glibc-2.5/include/string.h:38: warning: type defaults to ‘int’ in declaration of ‘__attribute_pure__’
+/mnt/simon/src/glibc-2.5/include/string.h:38: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/string.h:41: error: syntax error before ‘__attribute_pure__’
+/mnt/simon/src/glibc-2.5/include/string.h:41: warning: type defaults to ‘int’ in declaration of ‘__attribute_pure__’
+/mnt/simon/src/glibc-2.5/include/string.h:41: warning: data definition has no type or storage class
+In file included from mtrace.c:32:
+/mnt/simon/src/glibc-2.5/include/string.h:49:27: error: string/string.h: No such file or directory
+/mnt/simon/src/glibc-2.5/include/string.h:51: error: ‘strcoll_l’ undeclared here (not in a function)
+/mnt/simon/src/glibc-2.5/include/string.h:51: warning: type defaults to ‘int’ in declaration of ‘__strcoll_l’
+/mnt/simon/src/glibc-2.5/include/string.h:52: error: ‘strxfrm_l’ undeclared here (not in a function)
+/mnt/simon/src/glibc-2.5/include/string.h:52: warning: type defaults to ‘int’ in declaration of ‘__strxfrm_l’
+/mnt/simon/src/glibc-2.5/include/string.h:53: error: ‘strcasecmp_l’ undeclared here (not in a function)
+/mnt/simon/src/glibc-2.5/include/string.h:53: warning: type defaults to ‘int’ in declaration of ‘__strcasecmp_l’
+/mnt/simon/src/glibc-2.5/include/string.h:54: error: ‘strncasecmp_l’ undeclared here (not in a function)
+/mnt/simon/src/glibc-2.5/include/string.h:54: warning: type defaults to ‘int’ in declaration of ‘__strncasecmp_l’
+/mnt/simon/src/glibc-2.5/include/string.h:120: error: syntax error before ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/string.h:120: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/string.h:120: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/string.h:122: error: syntax error before ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/string.h:122: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/string.h:122: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/string.h:125: error: syntax error before ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/string.h:125: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/string.h:125: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/string.h:127: error: syntax error before ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/string.h:127: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/string.h:127: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/string.h:130: error: syntax error before ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/string.h:130: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/string.h:130: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/string.h:133: error: syntax error before ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/string.h:133: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/string.h:133: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/string.h:136: error: syntax error before ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/string.h:136: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/string.h:136: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/string.h:139: error: syntax error before ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/string.h:139: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/string.h:139: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/string.h:142: error: syntax error before ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/string.h:142: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/string.h:142: warning: data definition has no type or storage class
+In file included from mtrace.c:33:
+/mnt/simon/src/glibc-2.5/include/stdlib.h:8:27: error: stdlib/stdlib.h: No such file or directory
+In file included from mtrace.c:33:
+/mnt/simon/src/glibc-2.5/include/stdlib.h:15: error: syntax error before ‘extern’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:15: error: ‘strtol_l’ undeclared here (not in a function)
+/mnt/simon/src/glibc-2.5/include/stdlib.h:15: warning: type defaults to ‘int’ in declaration of ‘__strtol_l’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:16: error: ‘strtoul_l’ undeclared here (not in a function)
+/mnt/simon/src/glibc-2.5/include/stdlib.h:16: warning: type defaults to ‘int’ in declaration of ‘__strtoul_l’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:17: error: ‘strtoll_l’ undeclared here (not in a function)
+/mnt/simon/src/glibc-2.5/include/stdlib.h:17: warning: type defaults to ‘int’ in declaration of ‘__strtoll_l’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:18: error: ‘strtoull_l’ undeclared here (not in a function)
+/mnt/simon/src/glibc-2.5/include/stdlib.h:18: warning: type defaults to ‘int’ in declaration of ‘__strtoull_l’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:19: error: ‘strtod_l’ undeclared here (not in a function)
+/mnt/simon/src/glibc-2.5/include/stdlib.h:19: warning: type defaults to ‘int’ in declaration of ‘__strtod_l’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:20: error: ‘strtof_l’ undeclared here (not in a function)
+/mnt/simon/src/glibc-2.5/include/stdlib.h:20: warning: type defaults to ‘int’ in declaration of ‘__strtof_l’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:21: error: ‘strtold_l’ undeclared here (not in a function)
+/mnt/simon/src/glibc-2.5/include/stdlib.h:21: warning: type defaults to ‘int’ in declaration of ‘__strtold_l’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:44: error: syntax error before ‘int32_t’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:44: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdlib.h:45: warning: ‘struct random_data’ declared inside parameter list
+/mnt/simon/src/glibc-2.5/include/stdlib.h:47: warning: ‘struct random_data’ declared inside parameter list
+/mnt/simon/src/glibc-2.5/include/stdlib.h:48: warning: ‘struct random_data’ declared inside parameter list
+/mnt/simon/src/glibc-2.5/include/stdlib.h:51: warning: ‘struct drand48_data’ declared inside parameter list
+/mnt/simon/src/glibc-2.5/include/stdlib.h:54: warning: ‘struct drand48_data’ declared inside parameter list
+/mnt/simon/src/glibc-2.5/include/stdlib.h:57: warning: ‘struct drand48_data’ declared inside parameter list
+/mnt/simon/src/glibc-2.5/include/stdlib.h:59: warning: ‘struct drand48_data’ declared inside parameter list
+/mnt/simon/src/glibc-2.5/include/stdlib.h:61: warning: ‘struct drand48_data’ declared inside parameter list
+/mnt/simon/src/glibc-2.5/include/stdlib.h:63: warning: ‘struct drand48_data’ declared inside parameter list
+/mnt/simon/src/glibc-2.5/include/stdlib.h:67: warning: ‘struct drand48_data’ declared inside parameter list
+/mnt/simon/src/glibc-2.5/include/stdlib.h:86: error: syntax error before ‘__compar_fn_t’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:86: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdlib.h:99: error: syntax error before ‘__attribute_malloc__’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:99: warning: type defaults to ‘int’ in declaration of ‘__attribute_malloc__’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:99: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/stdlib.h:105: error: syntax error before ‘__locale_t’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:105: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdlib.h:108: error: syntax error before ‘__locale_t’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:108: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdlib.h:111: error: syntax error before ‘__locale_t’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:111: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdlib.h:115: error: syntax error before ‘__locale_t’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:115: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdlib.h:120: error: syntax error before ‘__locale_t’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:120: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdlib.h:125: error: syntax error before ‘__locale_t’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:125: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdlib.h:132: error: syntax error before ‘__locale_t’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:132: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/stdlib.h:143: error: syntax error before ‘(’ token
+/mnt/simon/src/glibc-2.5/include/stdlib.h:149: error: syntax error before ‘(’ token
+/mnt/simon/src/glibc-2.5/include/stdlib.h:155: error: syntax error before ‘(’ token
+/mnt/simon/src/glibc-2.5/include/stdlib.h:161: error: syntax error before ‘(’ token
+/mnt/simon/src/glibc-2.5/include/stdlib.h:167: error: syntax error before ‘(’ token
+/mnt/simon/src/glibc-2.5/include/stdlib.h:173: error: syntax error before ‘(’ token
+/mnt/simon/src/glibc-2.5/include/stdlib.h:179: error: syntax error before ‘(’ token
+/mnt/simon/src/glibc-2.5/include/stdlib.h:217: error: syntax error before ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:217: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+/mnt/simon/src/glibc-2.5/include/stdlib.h:217: warning: data definition has no type or storage class
+mtrace.c:35:32: error: stdio-common/_itoa.h: No such file or directory
+In file included from mtrace.c:38:
+/mnt/simon/src/glibc-2.5/include/libc-internal.h:7:23: error: hp-timing.h: No such file or directory
+In file included from mtrace.c:38:
+/mnt/simon/src/glibc-2.5/include/libc-internal.h:10: error: syntax error before ‘extern’
+/mnt/simon/src/glibc-2.5/include/libc-internal.h:25: error: syntax error before ‘__get_clockfreq’
+/mnt/simon/src/glibc-2.5/include/libc-internal.h:25: warning: type defaults to ‘int’ in declaration of ‘__get_clockfreq’
+/mnt/simon/src/glibc-2.5/include/libc-internal.h:25: warning: data definition has no type or storage class
+mtrace.c:40:28: error: libio/iolibio.h: No such file or directory
+In file included from mtrace.c:53:
+/mnt/simon/src/glibc-2.5/include/unistd.h:2:27: error: posix/unistd.h: No such file or directory
+In file included from mtrace.c:53:
+/mnt/simon/src/glibc-2.5/include/unistd.h:23: error: syntax error before ‘__lseek64’
+/mnt/simon/src/glibc-2.5/include/unistd.h:23: error: syntax error before ‘__off64_t’
+/mnt/simon/src/glibc-2.5/include/unistd.h:23: warning: type defaults to ‘int’ in declaration of ‘__lseek64’
+/mnt/simon/src/glibc-2.5/include/unistd.h:23: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:23: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:24: error: syntax error before ‘__lseek’
+/mnt/simon/src/glibc-2.5/include/unistd.h:24: error: syntax error before ‘__off_t’
+/mnt/simon/src/glibc-2.5/include/unistd.h:24: warning: type defaults to ‘int’ in declaration of ‘__lseek’
+/mnt/simon/src/glibc-2.5/include/unistd.h:24: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:24: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:26: error: syntax error before ‘__libc_lseek’
+/mnt/simon/src/glibc-2.5/include/unistd.h:26: error: syntax error before ‘__off_t’
+/mnt/simon/src/glibc-2.5/include/unistd.h:26: warning: type defaults to ‘int’ in declaration of ‘__libc_lseek’
+/mnt/simon/src/glibc-2.5/include/unistd.h:26: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:26: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:27: error: syntax error before ‘__libc_lseek64’
+/mnt/simon/src/glibc-2.5/include/unistd.h:27: error: syntax error before ‘__off64_t’
+/mnt/simon/src/glibc-2.5/include/unistd.h:27: warning: type defaults to ‘int’ in declaration of ‘__libc_lseek64’
+/mnt/simon/src/glibc-2.5/include/unistd.h:27: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:27: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:28: error: syntax error before ‘__pread’
+/mnt/simon/src/glibc-2.5/include/unistd.h:29: error: syntax error before ‘__off_t’
+/mnt/simon/src/glibc-2.5/include/unistd.h:29: warning: type defaults to ‘int’ in declaration of ‘__pread’
+/mnt/simon/src/glibc-2.5/include/unistd.h:29: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:29: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:30: error: syntax error before ‘__libc_pread’
+/mnt/simon/src/glibc-2.5/include/unistd.h:31: error: syntax error before ‘__off_t’
+/mnt/simon/src/glibc-2.5/include/unistd.h:31: warning: type defaults to ‘int’ in declaration of ‘__libc_pread’
+/mnt/simon/src/glibc-2.5/include/unistd.h:31: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:31: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:32: error: syntax error before ‘__pread64’
+/mnt/simon/src/glibc-2.5/include/unistd.h:33: error: syntax error before ‘__off64_t’
+/mnt/simon/src/glibc-2.5/include/unistd.h:33: warning: type defaults to ‘int’ in declaration of ‘__pread64’
+/mnt/simon/src/glibc-2.5/include/unistd.h:33: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:33: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:34: error: syntax error before ‘__libc_pread64’
+/mnt/simon/src/glibc-2.5/include/unistd.h:35: error: syntax error before ‘__off64_t’
+/mnt/simon/src/glibc-2.5/include/unistd.h:35: warning: type defaults to ‘int’ in declaration of ‘__libc_pread64’
+/mnt/simon/src/glibc-2.5/include/unistd.h:35: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:35: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:36: error: syntax error before ‘__pwrite’
+/mnt/simon/src/glibc-2.5/include/unistd.h:37: error: syntax error before ‘__off_t’
+/mnt/simon/src/glibc-2.5/include/unistd.h:37: warning: type defaults to ‘int’ in declaration of ‘__pwrite’
+/mnt/simon/src/glibc-2.5/include/unistd.h:37: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:37: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:38: error: syntax error before ‘__libc_pwrite’
+/mnt/simon/src/glibc-2.5/include/unistd.h:39: error: syntax error before ‘__off_t’
+/mnt/simon/src/glibc-2.5/include/unistd.h:39: warning: type defaults to ‘int’ in declaration of ‘__libc_pwrite’
+/mnt/simon/src/glibc-2.5/include/unistd.h:39: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:39: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:40: error: syntax error before ‘__pwrite64’
+/mnt/simon/src/glibc-2.5/include/unistd.h:41: error: syntax error before ‘__off64_t’
+/mnt/simon/src/glibc-2.5/include/unistd.h:41: warning: type defaults to ‘int’ in declaration of ‘__pwrite64’
+/mnt/simon/src/glibc-2.5/include/unistd.h:41: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:41: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:43: error: syntax error before ‘__libc_pwrite64’
+/mnt/simon/src/glibc-2.5/include/unistd.h:44: error: syntax error before ‘__off64_t’
+/mnt/simon/src/glibc-2.5/include/unistd.h:44: warning: type defaults to ‘int’ in declaration of ‘__libc_pwrite64’
+/mnt/simon/src/glibc-2.5/include/unistd.h:44: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:44: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:45: error: syntax error before ‘__libc_read’
+/mnt/simon/src/glibc-2.5/include/unistd.h:45: warning: type defaults to ‘int’ in declaration of ‘__libc_read’
+/mnt/simon/src/glibc-2.5/include/unistd.h:45: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:47: error: syntax error before ‘__libc_write’
+/mnt/simon/src/glibc-2.5/include/unistd.h:47: warning: type defaults to ‘int’ in declaration of ‘__libc_write’
+/mnt/simon/src/glibc-2.5/include/unistd.h:47: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:53: error: syntax error before ‘__uid_t’
+/mnt/simon/src/glibc-2.5/include/unistd.h:53: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:56: error: syntax error before ‘__uid_t’
+/mnt/simon/src/glibc-2.5/include/unistd.h:56: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:57: error: syntax error before ‘__uid_t’
+/mnt/simon/src/glibc-2.5/include/unistd.h:58: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:83: error: syntax error before ‘__getpid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:83: warning: type defaults to ‘int’ in declaration of ‘__getpid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:83: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:85: error: syntax error before ‘__getppid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:85: warning: type defaults to ‘int’ in declaration of ‘__getppid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:85: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:86: error: syntax error before ‘__setsid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:86: warning: type defaults to ‘int’ in declaration of ‘__setsid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:86: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:87: error: syntax error before ‘__getuid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:87: warning: type defaults to ‘int’ in declaration of ‘__getuid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:87: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:88: error: syntax error before ‘__geteuid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:88: warning: type defaults to ‘int’ in declaration of ‘__geteuid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:88: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:89: error: syntax error before ‘__getgid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:89: warning: type defaults to ‘int’ in declaration of ‘__getgid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:89: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:90: error: syntax error before ‘__getegid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:90: warning: type defaults to ‘int’ in declaration of ‘__getegid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:90: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:91: error: syntax error before ‘__gid_t’
+/mnt/simon/src/glibc-2.5/include/unistd.h:91: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:93: error: syntax error before ‘__gid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:93: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:94: error: syntax error before ‘__uid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:94: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:95: error: syntax error before ‘__ruid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:95: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:96: error: syntax error before ‘__gid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:96: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:97: error: syntax error before ‘__pid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:97: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:99: error: syntax error before ‘__rgid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:99: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:100: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/unistd.h:100: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:101: error: syntax error before ‘*’ token
+/mnt/simon/src/glibc-2.5/include/unistd.h:101: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:102: error: syntax error before ‘__ruid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:102: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:103: error: syntax error before ‘__rgid’
+/mnt/simon/src/glibc-2.5/include/unistd.h:103: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:108: error: syntax error before ‘__vfork’
+/mnt/simon/src/glibc-2.5/include/unistd.h:108: warning: type defaults to ‘int’ in declaration of ‘__vfork’
+/mnt/simon/src/glibc-2.5/include/unistd.h:108: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:124: error: syntax error before ‘__read’
+/mnt/simon/src/glibc-2.5/include/unistd.h:124: warning: type defaults to ‘int’ in declaration of ‘__read’
+/mnt/simon/src/glibc-2.5/include/unistd.h:124: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:126: error: syntax error before ‘__write’
+/mnt/simon/src/glibc-2.5/include/unistd.h:126: warning: type defaults to ‘int’ in declaration of ‘__write’
+/mnt/simon/src/glibc-2.5/include/unistd.h:126: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:128: error: syntax error before ‘__fork’
+/mnt/simon/src/glibc-2.5/include/unistd.h:128: warning: type defaults to ‘int’ in declaration of ‘__fork’
+/mnt/simon/src/glibc-2.5/include/unistd.h:128: warning: data definition has no type or storage class
+/mnt/simon/src/glibc-2.5/include/unistd.h:132: error: syntax error before ‘__off_t’
+/mnt/simon/src/glibc-2.5/include/unistd.h:132: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:133: error: syntax error before ‘__off64_t’
+/mnt/simon/src/glibc-2.5/include/unistd.h:133: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:134: error: syntax error before ‘__off_t’
+/mnt/simon/src/glibc-2.5/include/unistd.h:134: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:135: error: syntax error before ‘__delta’
+/mnt/simon/src/glibc-2.5/include/unistd.h:135: warning: function declaration isn’t a prototype
+/mnt/simon/src/glibc-2.5/include/unistd.h:160: error: syntax error before ‘__libc_fork’
+/mnt/simon/src/glibc-2.5/include/unistd.h:160: warning: type defaults to ‘int’ in declaration of ‘__libc_fork’
+/mnt/simon/src/glibc-2.5/include/unistd.h:160: warning: data definition has no type or storage class
+mtrace.c:93: error: syntax error before ‘*’ token
+mtrace.c:93: warning: type defaults to ‘int’ in declaration of ‘mallstream’
+mtrace.c:93: warning: data definition has no type or storage class
+mtrace.c:100: error: syntax error before ‘mallwatch’
+mtrace.c:100: warning: type defaults to ‘int’ in declaration of ‘mallwatch’
+mtrace.c:100: warning: data definition has no type or storage class
+mtrace.c:110: error: syntax error before ‘ptr’
+mtrace.c:110: warning: function declaration isn’t a prototype
+mtrace.c:111: error: syntax error before ‘*’ token
+mtrace.c:111: error: syntax error before ‘size’
+mtrace.c:111: warning: type defaults to ‘int’ in declaration of ‘__ptr_t’
+mtrace.c:111: warning: function declaration isn’t a prototype
+mtrace.c:111: error: ‘__ptr_t’ declared as function returning a function
+mtrace.c:111: warning: function declaration isn’t a prototype
+mtrace.c:112: error: syntax error before ‘*’ token
+mtrace.c:112: error: syntax error before ‘ptr’
+mtrace.c:113: warning: type defaults to ‘int’ in declaration of ‘__ptr_t’
+mtrace.c:113: warning: function declaration isn’t a prototype
+mtrace.c:113: error: ‘__ptr_t’ declared as function returning a function
+mtrace.c:113: warning: function declaration isn’t a prototype
+mtrace.c:114: error: syntax error before ‘*’ token
+mtrace.c:114: error: syntax error before ‘__alignment’
+mtrace.c:116: warning: type defaults to ‘int’ in declaration of ‘__ptr_t’
+mtrace.c:116: warning: function declaration isn’t a prototype
+mtrace.c:116: error: ‘__ptr_t’ declared as function returning a function
+mtrace.c:116: warning: function declaration isn’t a prototype
+mtrace.c:123: error: syntax error before ‘__THROW’
+mtrace.c:123: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+mtrace.c:123: warning: data definition has no type or storage class
+mtrace.c:127: warning: function declaration isn’t a prototype
+mtrace.c:131: warning: type defaults to ‘int’ in declaration of ‘__ptr_t’
+mtrace.c:131: error: syntax error before ‘__THROW’
+mtrace.c:131: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+mtrace.c:131: warning: ‘regparm’ attribute only applies to function types
+mtrace.c:131: warning: ‘stdcall’ attribute only applies to function types
+mtrace.c:131: warning: data definition has no type or storage class
+mtrace.c:135: warning: function declaration isn’t a prototype
+mtrace.c: In function ‘tr_where’:
+mtrace.c:135: warning: type defaults to ‘int’ in declaration of ‘__ptr_t’
+mtrace.c:135: error: syntax error before ‘caller’
+mtrace.c:136: warning: type of ‘caller’ defaults to ‘int’
+mtrace.c:135: error: declaration for parameter ‘__ptr_t’ but no such parameter
+mtrace.c:137: error: syntax error before ‘tr_pid’
+mtrace.c:138: error: ‘tr_pid’ undeclared (first use in this function)
+mtrace.c:138: error: (Each undeclared identifier is reported only once
+mtrace.c:138: error: for each function it appears in.)
+mtrace.c:140: warning: implicit declaration of function ‘getpid’
+mtrace.c:150: warning: comparison between pointer and integer
+mtrace.c:153: error: ‘Dl_info’ undeclared (first use in this function)
+mtrace.c:153: error: syntax error before ‘info’
+mtrace.c:154: warning: implicit declaration of function ‘_dl_addr’
+mtrace.c:154: error: ‘info’ undeclared (first use in this function)
+mtrace.c:159: warning: implicit declaration of function ‘strlen’
+mtrace.c:159: warning: incompatible implicit declaration of built-in function ‘strlen’
+mtrace.c:160: warning: implicit declaration of function ‘alloca’
+mtrace.c:160: warning: incompatible implicit declaration of built-in function ‘alloca’
+mtrace.c:163: warning: implicit declaration of function ‘__stpcpy’
+mtrace.c:163: warning: implicit declaration of function ‘_fitoa’
+mtrace.c:163: error: syntax error before ‘__ptr_t’
+mtrace.c:174: warning: implicit declaration of function ‘fprintf’
+mtrace.c:174: warning: incompatible implicit declaration of built-in function ‘fprintf’
+mtrace.c:176: warning: format ‘%p’ expects type ‘void *’, but argument 7 has type ‘int’
+mtrace.c:180: warning: incompatible implicit declaration of built-in function ‘fprintf’
+mtrace.c:180: warning: format ‘%p’ expects type ‘void *’, but argument 4 has type ‘int’
+mtrace.c:197: warning: incompatible implicit declaration of built-in function ‘fprintf’
+mtrace.c:209: warning: format ‘%08x’ expects type ‘unsigned int’, but argument 3 has type ‘long int’
+mtrace.c:209: warning: format ‘%08x’ expects type ‘unsigned int’, but argument 4 has type ‘long int’
+mtrace.c:209: warning: format ‘%08x’ expects type ‘unsigned int’, but argument 5 has type ‘long int’
+mtrace.c:209: warning: format ‘%08x’ expects type ‘unsigned int’, but argument 6 has type ‘long int’
+mtrace.c:209: warning: format ‘%08x’ expects type ‘unsigned int’, but argument 7 has type ‘long int’
+mtrace.c:209: warning: format ‘%08x’ expects type ‘unsigned int’, but argument 8 has type ‘long int’
+mtrace.c:209: warning: format ‘%08x’ expects type ‘unsigned int’, but argument 9 has type ‘long int’
+mtrace.c:209: warning: format ‘%08x’ expects type ‘unsigned int’, but argument 10 has type ‘long int’
+mtrace.c:209: warning: format ‘%08x’ expects type ‘unsigned int’, but argument 11 has type ‘long int’
+mtrace.c:209: warning: format ‘%08x’ expects type ‘unsigned int’, but argument 12 has type ‘long int’
+mtrace.c:209: warning: format ‘%08x’ expects type ‘unsigned int’, but argument 13 has type ‘long int’
+mtrace.c:209: warning: format ‘%08x’ expects type ‘unsigned int’, but argument 14 has type ‘long int’
+mtrace.c: At top level:
+mtrace.c:213: error: syntax error before ‘const’
+mtrace.c:213: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+mtrace.c:213: warning: data definition has no type or storage class
+mtrace.c:216: error: syntax error before ‘__ptr_t’
+mtrace.c:216: warning: type defaults to ‘int’ in declaration of ‘ptr’
+mtrace.c:216: warning: data definition has no type or storage class
+mtrace.c:217: error: syntax error before ‘caller’
+mtrace.c:217: warning: type defaults to ‘int’ in declaration of ‘caller’
+mtrace.c:217: warning: data definition has no type or storage class
+mtrace.c:221: error: syntax error before ‘!=’ token
+mtrace.c:222: warning: type defaults to ‘int’ in declaration of ‘tr_where’
+mtrace.c:222: warning: parameter names (without types) in function declaration
+mtrace.c:222: error: conflicting types for ‘tr_where’
+mtrace.c:136: error: previous definition of ‘tr_where’ was here
+mtrace.c:222: warning: data definition has no type or storage class
+mtrace.c:224: error: syntax error before string constant
+mtrace.c:224: warning: type defaults to ‘int’ in declaration of ‘fprintf’
+mtrace.c:224: warning: function declaration isn’t a prototype
+mtrace.c:224: warning: conflicting types for built-in function ‘fprintf’
+mtrace.c:224: warning: data definition has no type or storage class
+mtrace.c:225: error: syntax error before ‘!=’ token
+mtrace.c:228: error: syntax error before ‘!=’ token
+mtrace.c:229: warning: type defaults to ‘int’ in declaration of ‘__free_hook’
+mtrace.c:229: warning: initialization makes integer from pointer without a cast
+mtrace.c:229: error: initializer element is not constant
+mtrace.c:229: warning: data definition has no type or storage class
+mtrace.c:230: error: syntax error before ‘if’
+mtrace.c:234: warning: type defaults to ‘int’ in declaration of ‘__free_hook’
+mtrace.c:234: error: redefinition of ‘__free_hook’
+mtrace.c:229: error: previous definition of ‘__free_hook’ was here
+mtrace.c:234: error: ‘tr_freehook’ undeclared here (not in a function)
+mtrace.c:234: warning: data definition has no type or storage class
+mtrace.c:235: error: syntax error before ‘!=’ token
+mtrace.c:238: error: syntax error before ‘tr_mallochook’
+mtrace.c:238: error: syntax error before ‘const’
+mtrace.c:238: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+mtrace.c:238: warning: data definition has no type or storage class
+mtrace.c:240: error: syntax error before ‘tr_mallochook’
+mtrace.c:241: error: syntax error before ‘__malloc_size_t’
+mtrace.c:241: warning: type defaults to ‘int’ in declaration of ‘size’
+mtrace.c:241: warning: data definition has no type or storage class
+mtrace.c:242: error: syntax error before ‘caller’
+mtrace.c:242: warning: type defaults to ‘int’ in declaration of ‘caller’
+mtrace.c:242: warning: data definition has no type or storage class
+mtrace.c:246: error: syntax error before ‘!=’ token
+mtrace.c:248: warning: type defaults to ‘int’ in declaration of ‘__malloc_hook’
+mtrace.c:248: error: ‘tr_old_malloc_hook’ undeclared here (not in a function)
+mtrace.c:248: warning: data definition has no type or storage class
+mtrace.c:249: error: syntax error before ‘if’
+mtrace.c:253: warning: type defaults to ‘int’ in declaration of ‘__malloc_hook’
+mtrace.c:253: error: redefinition of ‘__malloc_hook’
+mtrace.c:248: error: previous definition of ‘__malloc_hook’ was here
+mtrace.c:253: error: ‘tr_mallochook’ undeclared here (not in a function)
+mtrace.c:253: warning: data definition has no type or storage class
+mtrace.c:255: warning: type defaults to ‘int’ in declaration of ‘tr_where’
+mtrace.c:255: warning: parameter names (without types) in function declaration
+mtrace.c:255: warning: data definition has no type or storage class
+mtrace.c:257: error: syntax error before string constant
+mtrace.c:259: error: syntax error before ‘!=’ token
+mtrace.c:267: error: syntax error before ‘tr_reallochook’
+mtrace.c:267: error: syntax error before ‘const’
+mtrace.c:268: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+mtrace.c:268: warning: data definition has no type or storage class
+mtrace.c:270: error: syntax error before ‘tr_reallochook’
+mtrace.c:271: error: syntax error before ‘__ptr_t’
+mtrace.c:271: warning: type defaults to ‘int’ in declaration of ‘ptr’
+mtrace.c:271: warning: data definition has no type or storage class
+mtrace.c:272: error: syntax error before ‘size’
+mtrace.c:272: warning: type defaults to ‘int’ in declaration of ‘size’
+mtrace.c:272: warning: data definition has no type or storage class
+mtrace.c:273: error: syntax error before ‘caller’
+mtrace.c:273: warning: type defaults to ‘int’ in declaration of ‘caller’
+mtrace.c:273: warning: data definition has no type or storage class
+mtrace.c:280: error: syntax error before ‘!=’ token
+mtrace.c:282: warning: type defaults to ‘int’ in declaration of ‘__free_hook’
+mtrace.c:282: error: redefinition of ‘__free_hook’
+mtrace.c:229: error: previous definition of ‘__free_hook’ was here
+mtrace.c:282: warning: initialization makes integer from pointer without a cast
+mtrace.c:282: error: initializer element is not constant
+mtrace.c:282: warning: data definition has no type or storage class
+mtrace.c:283: warning: type defaults to ‘int’ in declaration of ‘__malloc_hook’
+mtrace.c:283: error: redefinition of ‘__malloc_hook’
+mtrace.c:248: error: previous definition of ‘__malloc_hook’ was here
+mtrace.c:283: warning: data definition has no type or storage class
+mtrace.c:284: warning: type defaults to ‘int’ in declaration of ‘__realloc_hook’
+mtrace.c:284: error: ‘tr_old_realloc_hook’ undeclared here (not in a function)
+mtrace.c:284: warning: data definition has no type or storage class
+mtrace.c:285: error: syntax error before ‘if’
+mtrace.c:289: warning: type defaults to ‘int’ in declaration of ‘__free_hook’
+mtrace.c:289: error: redefinition of ‘__free_hook’
+mtrace.c:229: error: previous definition of ‘__free_hook’ was here
+mtrace.c:289: warning: data definition has no type or storage class
+mtrace.c:290: warning: type defaults to ‘int’ in declaration of ‘__malloc_hook’
+mtrace.c:290: error: redefinition of ‘__malloc_hook’
+mtrace.c:248: error: previous definition of ‘__malloc_hook’ was here
+mtrace.c:290: warning: data definition has no type or storage class
+mtrace.c:291: warning: type defaults to ‘int’ in declaration of ‘__realloc_hook’
+mtrace.c:291: error: redefinition of ‘__realloc_hook’
+mtrace.c:284: error: previous definition of ‘__realloc_hook’ was here
+mtrace.c:291: error: ‘tr_reallochook’ undeclared here (not in a function)
+mtrace.c:291: warning: data definition has no type or storage class
+mtrace.c:293: warning: type defaults to ‘int’ in declaration of ‘tr_where’
+mtrace.c:293: warning: parameter names (without types) in function declaration
+mtrace.c:293: warning: data definition has no type or storage class
+mtrace.c:294: error: syntax error before ‘if’
+mtrace.c:302: warning: type defaults to ‘int’ in declaration of ‘tr_where’
+mtrace.c:302: warning: parameter names (without types) in function declaration
+mtrace.c:302: warning: data definition has no type or storage class
+mtrace.c:303: error: syntax error before string constant
+mtrace.c:306: error: syntax error before ‘!=’ token
+mtrace.c:314: error: syntax error before ‘tr_memalignhook’
+mtrace.c:315: error: syntax error before ‘const’
+mtrace.c:315: warning: type defaults to ‘int’ in declaration of ‘__THROW’
+mtrace.c:315: warning: data definition has no type or storage class
+mtrace.c:317: error: syntax error before ‘tr_memalignhook’
+mtrace.c:318: error: syntax error before ‘__malloc_size_t’
+mtrace.c:318: warning: type defaults to ‘int’ in declaration of ‘alignment’
+mtrace.c:318: warning: type defaults to ‘int’ in declaration of ‘size’
+mtrace.c:318: warning: data definition has no type or storage class
+mtrace.c:319: error: syntax error before ‘caller’
+mtrace.c:319: warning: type defaults to ‘int’ in declaration of ‘caller’
+mtrace.c:319: warning: data definition has no type or storage class
+mtrace.c:323: error: syntax error before ‘!=’ token
+mtrace.c:325: warning: type defaults to ‘int’ in declaration of ‘__memalign_hook’
+mtrace.c:325: error: ‘tr_old_memalign_hook’ undeclared here (not in a function)
+mtrace.c:325: warning: data definition has no type or storage class
+mtrace.c:326: warning: type defaults to ‘int’ in declaration of ‘__malloc_hook’
+mtrace.c:326: error: redefinition of ‘__malloc_hook’
+mtrace.c:248: error: previous definition of ‘__malloc_hook’ was here
+mtrace.c:326: warning: data definition has no type or storage class
+mtrace.c:327: error: syntax error before ‘if’
+mtrace.c:331: warning: type defaults to ‘int’ in declaration of ‘__memalign_hook’
+mtrace.c:331: error: redefinition of ‘__memalign_hook’
+mtrace.c:325: error: previous definition of ‘__memalign_hook’ was here
+mtrace.c:331: error: ‘tr_memalignhook’ undeclared here (not in a function)
+mtrace.c:331: warning: data definition has no type or storage class
+mtrace.c:332: warning: type defaults to ‘int’ in declaration of ‘__malloc_hook’
+mtrace.c:332: error: redefinition of ‘__malloc_hook’
+mtrace.c:248: error: previous definition of ‘__malloc_hook’ was here
+mtrace.c:332: warning: data definition has no type or storage class
+mtrace.c:334: warning: type defaults to ‘int’ in declaration of ‘tr_where’
+mtrace.c:334: warning: parameter names (without types) in function declaration
+mtrace.c:334: warning: data definition has no type or storage class
+mtrace.c:336: error: syntax error before string constant
+mtrace.c:338: error: syntax error before ‘!=’ token
+mtrace.c:370: warning: function declaration isn’t a prototype
+mtrace.c: In function ‘mtrace’:
+mtrace.c:384: warning: implicit declaration of function ‘__secure_getenv’
+mtrace.c:384: warning: assignment makes pointer from integer without a cast
+mtrace.c:388: warning: comparison between pointer and integer
+mtrace.c:390: warning: implicit declaration of function ‘malloc’
+mtrace.c:390: warning: incompatible implicit declaration of built-in function ‘malloc’
+mtrace.c:398: warning: implicit declaration of function ‘fileno’
+mtrace.c:398: error: ‘F_GETFD’ undeclared (first use in this function)
+mtrace.c:401: error: ‘FD_CLOEXEC’ undeclared (first use in this function)
+mtrace.c:402: error: ‘F_SETFD’ undeclared (first use in this function)
+mtrace.c:406: warning: implicit declaration of function ‘_IO_setvbuf’
+mtrace.c:406: error: ‘_IOFBF’ undeclared (first use in this function)
+mtrace.c:408: warning: assignment makes pointer from integer without a cast
+mtrace.c:427: warning: implicit declaration of function ‘free’
+mtrace.c: At top level:
+mtrace.c:433: warning: function declaration isn’t a prototype
+mtrace.c: In function ‘muntrace’:
+mtrace.c:440: warning: assignment makes integer from pointer without a cast
+make: *** [mtrace.o] Error 1

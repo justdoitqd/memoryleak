@@ -1,0 +1,12 @@
+08048000-08049000 r-xp 00000000 08:01 242963     /home/simon/test/mtracestub/test
+08049000-0804a000 rw-p 00000000 08:01 242963     /home/simon/test/mtracestub/test
+0804a000-0806b000 rw-p 0804a000 00:00 0          [heap]
+b7e9e000-b7e9f000 rw-p b7e9e000 00:00 0 
+b7e9f000-b7fc4000 r-xp 00000000 08:01 113164     /lib/tls/i686/cmov/libc-2.3.6.so
+b7fc4000-b7fcb000 rw-p 00125000 08:01 113164     /lib/tls/i686/cmov/libc-2.3.6.so
+b7fcb000-b7fce000 rw-p b7fcb000 00:00 0 
+b7fd8000-b7fdb000 rw-p b7fd8000 00:00 0 
+b7fdb000-b7ff0000 r-xp 00000000 08:01 113157     /lib/ld-2.3.6.so
+b7ff0000-b7ff1000 rw-p 00014000 08:01 113157     /lib/ld-2.3.6.so
+bf9d4000-bf9e9000 rw-p bffeb000 00:00 0          [stack]
+ffffe000-fffff000 r-xp 00000000 00:00 0          [vdso]

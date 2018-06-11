@@ -1,0 +1,89 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <string.h>
+#include <unistd.h>
+#include <netinet/in.h>
+
+#include <pthread.h>
+#include <mcheck.h>
+
+extern void set_debug_traps();
+extern void breakpoint();
+extern void _catchException0();
+
+#define LISTEN_GDBSERVER_PORT 22222
+#define MAX_CONN 1
+
+int smtraceServerSocket = 0;
+int newSocket = 0;
+
+extern void smtrace();
+extern void smuntrace();
+
+static void* thread_function(void* arg)
+{
+	struct sockaddr_in gdbSockAddr_in;
+	struct sockaddr_in addr_in;
+	smtraceServerSocket = socket(AF_INET, SOCK_STREAM, 0);
+	bzero(&gdbSockAddr_in, sizeof(gdbSockAddr_in));
+	gdbSockAddr_in.sin_family = AF_INET;
+	gdbSockAddr_in.sin_port = htons(LISTEN_GDBSERVER_PORT);
+	gdbSockAddr_in.sin_addr.s_addr = INADDR_ANY;
+
+	bind(smtraceServerSocket, (struct socketaddr*)&gdbSockAddr_in, sizeof(gdbSockAddr_in));
+	listen(smtraceServerSocket, 2); // block listening
+
+	//printf("init socket: listen socket=%d, newSocket=%d\n", smtraceServerSocket, newSocket);
+	char buff[20];
+	int numBytes;
+	struct sockaddr_in addr_in;
+	int addrSize = 0;
+	while(1)
+	{
+		bzero(&addr_in, sizeof(addr_in));
+		newSocket = accept(smtraceServerSocket, (struct socketaddr*)&addr_in, &addrSize);
+
+		//printf("receive new connection: socket=%d\n", newSocket);
+		memset(buff, 0, sizeof(buff));
+		if ((numBytes = recv(newSocket, buff, sizeof(buff),0))==-1)
+		{
+			printf("recv error: %d, will quit the loop\n", numBytes);
+			close(newSocket);
+			break;  // don't accept chars
+		}
+		if (buff[0] == 'o')
+		{
+			printf("memory tracing switch on\n");
+			smtrace();
+		}
+		else if (buff[0] == 'c')
+		{
+			printf("memory tracing switch off\n");
+			smuntrace();
+		}
+		close(newSocket);
+	}
+	return;
+}
+
+static void injectStub()
+{
+	pthread_t mythread;
+
+	sleep(10);
+
+	if ( pthread_create( &mythread, NULL, thread_function, NULL) ) {
+    		printf("error creating thread.");
+    		abort();
+  	}
+	return;
+}
+
+void _init()
+{
+	injectStub();
+	printf("Memory leak detection lib has been attached successfully\n");
+}

@@ -1,0 +1,2 @@
+export LD_PRELOAD=$PWD/libsmtrace.so
+export MALLOC_TRACE=$PWD/nn.log

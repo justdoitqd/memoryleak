@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+
+int test = 1;
+int tmp[] = {2, 1};
+struct People {
+	char name[10];
+	int age;
+};
+struct People maggie;
+
+int main(int argc, void* argv[])
+{
+	char c;
+	while (c = getc(stdin))
+	{
+		if ((c>='0') && (c<='9'))
+		{
+			test += c-'0';
+			printf("I am alive, test=%d\n", test);
+		}
+	}
+	return 0;
+}
